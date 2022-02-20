@@ -1,11 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# https://towardsdatascience.com/review-mobilenetv2-light-weight-model-image-classification-8febb490e61c
-# 
-# https://github.com/Haikoitoh/paper-implementation/blob/main/MobileNetV2.ipynb
-
-
 import os
 import numpy as np
 import matplotlib.pyplot as plt
@@ -49,10 +41,10 @@ def print_metrics_summary(accuracy, recall, precision, f1):
     #     print("{metric:<18}{value:.4f}".format(metric="AUPR:", value=aupr))
 
 
-Y = np.load('dataX.npz')
+Y = np.load('dataY.npz')
 Y= Y.f.arr_0
 
-X = np.load('dataY.npz')
+X = np.load('dataX.npz')
 X = X.f.arr_0
 
 import gc
@@ -70,7 +62,6 @@ import sklearn.metrics
 import sklearn.feature_selection
 import sklearn.feature_extraction
 import sklearn.model_selection
-import tqdm
 import gc
 
 #https://gist.github.com/ylogx/53fef94cc61d6a3e9b3eb900482f41e0
@@ -142,6 +133,3 @@ plt.show()
 del X
 del Y
 gc.collect()
-
-
-
